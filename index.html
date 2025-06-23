@@ -140,7 +140,6 @@
   <!-- 3-Column Content Section -->
   <section>
     <div>
-      
       <!-- Column 1 -->
       <div>
         <!-- Title with Bootstrap icon for RISE Strategy -->
@@ -154,8 +153,8 @@
           Intel sets ambitious 2030 goals, including driving industry-wide 
           progress on climate action, water stewardship, and waste reduction.
         </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+        <!-- Learn More Button triggers modal -->
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#learnMoreModal">Learn More</a>
       </div>
 
       <!-- Column 2 -->
@@ -172,8 +171,7 @@
           environmental initiatives and partnerships across the semiconductor 
           industry.
         </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#learnMoreModal">Learn More</a>
       </div>
 
       <!-- Column 3 -->
@@ -190,12 +188,30 @@
           Intel also upcycles and recycles materials to reduce waste and 
           advance a circular economy.
         </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#learnMoreModal">Learn More</a>
       </div>
-
     </div>
   </section>
+
+  <!-- Bootstrap Modal for Learn More -->
+  <div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content intel-modal">
+        <!-- Modal Header -->
+        <div class="modal-header" style="background: #0068b5; color: #fff; border-top-left-radius: 1rem; border-top-right-radius: 1rem; justify-content: center; border-bottom: none;">
+          <h5 class="modal-title w-100 text-center" id="learnMoreModalLabel" style="font-weight:600; margin:0;">More Information</h5>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body" style="background: #fff; color: #222; font-size: 1.1rem; text-align: center;">
+          Thank you for your interest! For more details, please visit Intel's official sustainability page or contact us for more information.
+        </div>
+        <!-- Modal Footer -->
+        <div class="modal-footer justify-content-center" style="background: #fff; border-top: none; border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem;">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background: #0068b5; border: none; border-radius: 20px; font-weight:500; min-width:120px;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Subscription Form -->
   <section>
@@ -260,5 +276,7 @@
     // Initial check on page load
     updateDirByLang();
   </script>
+  <!-- Add Bootstrap JS for modal functionality -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
