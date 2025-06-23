@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <!-- Use Bootstrap RTL CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.rtl.min.css" integrity="sha384-Xbg45MqvDIk1e563NLpGEulpX6AvL404DP+/iCgW9eFa2BqztiwTexswJo2jLMue" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -81,6 +85,10 @@
       <h3>Peak GHG Emissions</h3>
       <img src="img/5.jpg" alt="Placeholder Image" />
       <p>
+      This year marks Intel's highest annual greenhouse gas emissions 
+      for operations. Over subsequent years, Intel invests heavily in 
+      chemical abatement, renewable energy, and energy-efficient 
+      manufacturing to reverse this trend.
       </p>
     </div>
 
@@ -90,6 +98,7 @@
       <h3>RISE Strategy</h3>
       <img src="img/6.jpg" alt="Placeholder Image" />
       <p>
+        In 2020, Intel launched its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction.
       </p>
     </div>
 
@@ -99,6 +108,7 @@
       <h3>Net-Zero By 2040</h3>
       <img src="img/7.jpg" alt="Placeholder Image" />
       <p>
+        Intel pledges to achieve net-zero greenhouse gas emissions (Scope 1 and 2) by 2040, building on decades of environmental initiatives and partnerships across the semiconductor industry.
       </p>
     </div>
 
@@ -108,6 +118,9 @@
       <h3>Renewable Electricity</h3>
       <img src="img/8.jpg" alt="Placeholder Image" />
       <p>
+        Intel achieves 100% renewable electricity for its global operations, 
+        marking a significant milestone in its sustainability journey and 
+        setting a benchmark for the semiconductor industry.
       </p>
     </div>
 
@@ -117,6 +130,9 @@
       <h3>Sustainability Summit</h3>
       <img src="img/9.jpg" alt="Placeholder Image" />
       <p>
+        Intel hosts its first Sustainability Summit, bringing together 
+        industry leaders, policymakers, and environmental advocates to 
+        discuss and advance sustainable practices in technology.
       </p>
     </div>
   </section>
@@ -127,7 +143,12 @@
       
       <!-- Column 1 -->
       <div>
-        <h2>RISE Strategy</h2>
+        <!-- Title with Bootstrap icon for RISE Strategy -->
+        <h2>
+          <!-- Lightbulb icon for innovation -->
+          <i class="bi bi-lightbulb" style="vertical-align:middle; font-size:2em;"></i>
+          RISE Strategy
+        </h2>
         <p>
           Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
           Intel sets ambitious 2030 goals, including driving industry-wide 
@@ -139,7 +160,12 @@
 
       <!-- Column 2 -->
       <div>
-        <h2>Commitment</h2>
+        <!-- Title with Bootstrap icon for Commitment -->
+        <h2>
+          <!-- Shield icon for commitment and protection -->
+          <i class="bi bi-shield-check" style="vertical-align:middle; font-size:2em;"></i>
+          Commitment
+        </h2>
         <p>
           In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
           (Scope 1 and 2) by 2040. This commitment builds on decades of 
@@ -152,7 +178,12 @@
 
       <!-- Column 3 -->
       <div>
-        <h2>Water &amp; Waste</h2>
+        <!-- Title with Bootstrap icon for Water & Waste -->
+        <h2>
+          <!-- Water drop icon for water and recycling -->
+          <i class="bi bi-droplet" style="vertical-align:middle; font-size:2em;"></i>
+          Water &amp; Waste
+        </h2>
         <p>
           Intel conserves billions of gallons of water annually and 
           collaborates with local communities to restore watersheds.
@@ -168,8 +199,66 @@
 
   <!-- Subscription Form -->
   <section>
-    <h2>Subscribe to our Newsletter</h2>
-    <!-- Add form here -->
+    <h2>
+      <!-- Bootstrap mail icon for the title -->
+      <i class="bi bi-envelope" style="vertical-align:middle; font-size:1.3em;"></i>
+      Subscribe to our Newsletter
+    </h2>
+    <!-- Modern horizontal Bootstrap subscription form -->
+    <form>
+      <!-- Added class 'subscription-row' for styling -->
+      <div class="d-flex justify-content-center align-items-center subscription-row">
+        <!-- Email input field with visually hidden label for accessibility -->
+        <label for="email" class="form-label visually-hidden">Email address:</label>
+        <input 
+          type="email" 
+          class="form-control" 
+          id="email" 
+          placeholder="Enter your email">
+        <!-- Subscribe button (not rounded, fixed width, no text overflow) -->
+        <button 
+          type="submit" 
+          class="btn btn-primary subscribe-btn">
+          Subscribe
+        </button>
+      </div>
+    </form>
   </section>
+  <!-- Simple Footer -->
+  <footer class="site-footer">
+    <!-- Footer content -->
+    &copy; 2024 Intel Corporation. All rights reserved.
+  </footer>
+
+  <!-- JavaScript for RTL language detection and dir attribute adjustment -->
+  <script>
+    // List of RTL language codes
+    const rtlLangs = ['ar', 'he', 'fa', 'ur'];
+
+    // Function to check if a language is RTL
+    function isRTLLang(lang) {
+      if (!lang) return false;
+      // Check for language code only (e.g., "ar" from "ar-SA")
+      return rtlLangs.includes(lang.split('-')[0].toLowerCase());
+    }
+
+    // Function to update dir attribute based on lang
+    function updateDirByLang() {
+      const html = document.documentElement;
+      const lang = html.getAttribute('lang') || 'en';
+      if (isRTLLang(lang)) {
+        html.setAttribute('dir', 'rtl');
+      } else {
+        html.setAttribute('dir', 'ltr');
+      }
+    }
+
+    // Observe changes to the lang attribute (Google Translate updates this)
+    const htmlObserver = new MutationObserver(updateDirByLang);
+    htmlObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+    // Initial check on page load
+    updateDirByLang();
+  </script>
 </body>
 </html>

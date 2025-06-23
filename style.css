@@ -222,6 +222,77 @@ section:nth-of-type(3) h2 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Remove box/background from the form */
+section:nth-of-type(3) form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+}
+
+/* Subscription form row: horizontal layout and spacing */
+.subscription-row {
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 0.7rem;
+}
+
+/* Make the email input not rounded and modern */
+section:nth-of-type(3) input.form-control {
+  border-radius: 0;
+  border: 1.5px solid #b3c7df;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 0;
+  transition: border-color 0.2s;
+  box-shadow: none;
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+section:nth-of-type(3) input.form-control:focus {
+  border-color: #0068b5;
+  box-shadow: 0 0 0 2px #b3e0ff44;
+  outline: none;
+}
+
+/* Make the subscribe button not rounded */
+section:nth-of-type(3) button.btn-primary {
+  background: linear-gradient(90deg, #0068b5 0%, #00aee6 100%);
+  border: none;
+  border-radius: 0;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,104,181,0.09);
+  transition: background 0.18s, box-shadow 0.18s;
+}
+
+section:nth-of-type(3) button.btn-primary:hover,
+section:nth-of-type(3) button.btn-primary:focus {
+  background: linear-gradient(90deg, #00518e 0%, #008bb3 100%);
+  box-shadow: 0 4px 16px rgba(0,104,181,0.13);
+  color: #fff;
+}
+
+/* Footer styling */
+.site-footer {
+  background: #eaf3fa;
+  color: #0068b5;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 1rem;
+  margin-top: 2rem;
 }
 
 /* Responsive Design */
@@ -307,5 +378,10 @@ section:nth-of-type(3) h2 {
     max-height: 220px;      /* Prevents it from getting too tall */
     object-fit: cover;
     border-radius: 10px;
+  }
+  /* Responsive adjustments for form */
+  section:nth-of-type(3) form {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
   }
 }
